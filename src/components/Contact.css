@@ -1,0 +1,201 @@
+.contact-component {
+  background: #fff;
+  width: 100%;
+}
+
+.contact-component .booking-section {
+  display: flex;
+  gap: 47px;
+  align-items: center;
+  padding: 50px 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.contact-component .booking-left {
+  width: 628px;
+}
+
+.contact-component .booking-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.576px;
+  margin-bottom: 33px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000;
+}
+
+.contact-component .booking-title .highlight {
+  color: #6e9722;
+}
+
+.contact-component .booking-image-container {
+  position: relative;
+}
+
+.contact-component .booking-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contact-component .booking-form-container {
+  position: relative;
+}
+
+.contact-component .decorative-vector {
+  position: absolute;
+  top: 107px;
+  left: 167px;
+  width: 444px;
+  height: 212px;
+  transform: rotate(30.653deg) scaleY(-1);
+  z-index: 1;
+}
+
+.contact-component .booking-form {
+  background: rgba(255, 255, 255, 0.83);
+  backdrop-filter: blur(25px);
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 29px 6px;
+  width: 378px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-component .form-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000;
+  margin: 0;
+}
+
+.contact-component .form-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #98a2b3;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
+.contact-component .form-input {
+  width: 330px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #101828;
+  transition: border-color 0.3s;
+}
+
+.contact-component .form-input:focus {
+  border-color: #6e9722;
+  outline: none;
+}
+
+.contact-component .form-input::placeholder {
+  color: rgba(16, 24, 40, 0.37);
+}
+
+.contact-component .form-input.error {
+  border-color: #dc2626;
+}
+
+.contact-component .error-message {
+  color: #dc2626;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+
+.contact-component .form-submit {
+  width: 330px;
+  height: 49px;
+  background: #6e9722;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.contact-component .form-submit:hover {
+  background: #5a7a1a;
+}
+
+.contact-component .form-submit:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1280px) {
+  .contact-component .booking-section {
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 20px;
+  }
+  
+  .contact-component .booking-left {
+    width: 100%;
+    max-width: 628px;
+  }
+  
+  .contact-component .booking-form {
+    width: 100%;
+    max-width: 378px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-component .booking-section {
+    padding: 40px 20px;
+  }
+  
+  .contact-component .booking-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .contact-component .decorative-vector {
+    display: none;
+  }
+  
+  .contact-component .booking-form {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .contact-component .form-input,
+  .contact-component .form-submit {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-component .booking-title {
+    font-size: 18px;
+  }
+  
+  .contact-component .form-title {
+    font-size: 16px;
+  }
+}

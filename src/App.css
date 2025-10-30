@@ -1,0 +1,53 @@
+.App {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #ffffff;
+  overflow-x: hidden;
+  min-width: 320px;
+  width: 100%;
+}
+
+
+/* Utility classes for responsive design */
+.img-responsive,
+.video-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Loading animation for images and videos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure videos don't cause layout shifts */
+video {
+  display: block;
+  max-width: 100%;
+}

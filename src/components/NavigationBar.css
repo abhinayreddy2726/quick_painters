@@ -1,0 +1,152 @@
+.navigation-bar {
+  width: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: auto;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 74px;
+  width: 341px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #6e9722;
+}
+
+.nav-link.active {
+  color: #6e9722;
+}
+
+.nav-link.active::after {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .nav-container {
+    gap: 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-container {
+    gap: 180px;
+  }
+
+  .nav-logo img {
+    width: 280px;
+    height: 61px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-container {
+    gap: 100px;
+    padding: 0 40px;
+  }
+
+  .nav-logo img {
+    width: 240px;
+    height: 52px;
+  }
+
+  .nav-links {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation-bar {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .nav-logo img {
+    width: 200px;
+    height: 43px;
+  }
+
+  .nav-links {
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .nav-logo img {
+    width: 180px;
+    height: 39px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+}
+

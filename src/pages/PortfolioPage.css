@@ -1,0 +1,495 @@
+/* ===== PORTFOLIO PAGE STYLES ===== */
+
+.portfolio-page,
+.portfolio-page * {
+  box-sizing: border-box;
+}
+
+.portfolio-page {
+  background: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: #ffffff;
+  min-height: calc(100vh - 80px);
+  position: relative;
+  padding: 120px 40px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 152px;
+  max-width: 1283px;
+  margin: 0 auto;
+}
+
+/* Left Column - Text Content */
+.hero-content {
+  flex: 0 0 auto;
+  max-width: 543px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.hero-title-wrapper {
+  padding-bottom: 36px;
+}
+
+.hero-title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 140%;
+  letter-spacing: -0.52px;
+  text-align: left;
+  margin: 0;
+}
+
+.hero-title .highlight-green {
+  color: #6e9722;
+}
+
+.hero-title span:not(.highlight-green) {
+  color: #000000;
+}
+
+.hero-description {
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  width: 100%;
+}
+
+.book-home-visit-btn {
+  width: 182px;
+  height: 49px;
+  background: #6e9722;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.book-home-visit-btn:hover {
+  background: #5a7a1a;
+  transform: translateY(-2px);
+}
+
+/* Right Column - Image Gallery */
+.hero-gallery {
+  flex: 0 0 482.36px;
+  max-width: 482.36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-container {
+  width: 482.36px;
+  height: 644.64px;
+  position: relative;
+  padding: 44.77px 22.38px;
+  background: #ffffff;
+}
+
+.gallery-grid {
+  width: 495.37px;
+  height: 598px;
+  position: relative;
+  margin-left: -35.39px;
+  margin-top: 47px;
+}
+
+.gallery-item {
+  position: absolute;
+  border-radius: 12.67px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gallery Item 1 - Top Left (257.19px x 152.03px) */
+.gallery-item-1 {
+  width: 257.19px;
+  height: 152.03px;
+  left: 55.08px;
+  top: 0;
+  box-shadow: 8.63px 7.84px 9.65px rgba(0, 0, 0, 0.08);
+}
+
+/* Gallery Item 2 - Top Right (271.19px x 338.27px) */
+.gallery-item-2 {
+  width: 271.19px;
+  height: 338.27px;
+  left: 114.02px;
+  top: 91.22px;
+  box-shadow: 10.39px 9.45px 11.62px rgba(0, 0, 0, 0.08);
+}
+
+/* Gallery Item 3 - Bottom Left (160.9px x 160.9px) */
+.gallery-item-3 {
+  width: 160.9px;
+  height: 160.9px;
+  left: 0;
+  top: 319.27px;
+}
+
+/* Gallery Item 4 - Bottom Right (254.65px x 143.16px) */
+.gallery-item-4 {
+  width: 254.65px;
+  height: 143.16px;
+  left: 130.52px;
+  top: 454.83px;
+}
+
+/* Carousel Section */
+.carousel-section {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  width: 100%;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 800px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+/* Page Counter */
+.carousel-counter {
+  position: absolute;
+  right: 134px;
+  bottom: 120px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 56px;
+  line-height: 1.286;
+  letter-spacing: -1.12px;
+  color: #ffffff;
+  text-align: right;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 355px;
+  transform: translateY(-50%);
+  width: 67.08px;
+  height: 67.08px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  padding: 0;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.carousel-nav:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-prev {
+  left: 38px;
+}
+
+.carousel-nav-prev .caret-icon {
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.carousel-nav-next {
+  right: 38px;
+}
+
+.caret-icon {
+  width: 67.08px;
+  height: 67.08px;
+  display: block;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+@media (max-width: 1280px) {
+  .hero-container {
+    gap: 60px;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 450px;
+  }
+
+  .hero-gallery {
+    flex: 0 0 400px;
+    max-width: 400px;
+  }
+
+  .gallery-container {
+    width: 400px;
+    height: 530px;
+    padding: 30px 15px;
+  }
+
+  .gallery-grid {
+    width: 400px;
+    height: 480px;
+    margin-left: -20px;
+  }
+
+  .gallery-item-1 {
+    width: 200px;
+    height: 120px;
+    left: 40px;
+  }
+
+  .gallery-item-2 {
+    width: 220px;
+    height: 280px;
+    left: 90px;
+    top: 75px;
+  }
+
+  .gallery-item-3 {
+    width: 130px;
+    height: 130px;
+    left: 0;
+    top: 260px;
+  }
+
+  .gallery-item-4 {
+    width: 210px;
+    height: 120px;
+    left: 110px;
+    top: 370px;
+  }
+
+  .carousel-container {
+    height: 600px;
+    padding: 24px 0;
+  }
+
+  .carousel-counter {
+    font-size: 42px;
+    right: 80px;
+    bottom: 80px;
+  }
+
+  .carousel-nav {
+    width: 67.08px;
+    height: 67.08px;
+    top: 266px;
+  }
+
+  .carousel-nav-prev {
+    left: 20px;
+  }
+
+  .carousel-nav-next {
+    right: 20px;
+  }
+
+  .caret-icon {
+    width: 67.08px;
+    height: 67.08px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 20px 40px;
+    min-height: auto;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-gallery {
+    flex: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery-container {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    padding: 20px 10px;
+  }
+
+  .gallery-grid {
+    width: 100%;
+    height: 450px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .carousel-container {
+    height: 500px;
+    padding: 20px 0;
+  }
+
+  .carousel-counter {
+    font-size: 36px;
+    right: 20px;
+    bottom: 60px;
+  }
+
+  .carousel-nav {
+    width: 67.08px;
+    height: 67.08px;
+    top: 222px;
+  }
+
+  .carousel-nav-prev {
+    left: 15px;
+  }
+
+  .carousel-nav-next {
+    right: 15px;
+  }
+
+  .caret-icon {
+    width: 67.08px;
+    height: 67.08px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .book-home-visit-btn {
+    width: 160px;
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .gallery-item-1 {
+    width: 150px;
+    height: 90px;
+    left: 20px;
+  }
+
+  .gallery-item-2 {
+    width: 160px;
+    height: 200px;
+    left: 60px;
+    top: 60px;
+  }
+
+  .gallery-item-3 {
+    width: 100px;
+    height: 100px;
+    left: 0;
+    top: 200px;
+  }
+
+  .gallery-item-4 {
+    width: 160px;
+    height: 90px;
+    left: 80px;
+    top: 300px;
+  }
+
+  .carousel-container {
+    height: 400px;
+    padding: 16px 0;
+  }
+
+  .carousel-counter {
+    font-size: 28px;
+    right: 15px;
+    bottom: 50px;
+  }
+
+  .carousel-nav {
+    width: 67.08px;
+    height: 67.08px;
+    top: 178px;
+  }
+
+  .caret-icon {
+    width: 67.08px;
+    height: 67.08px;
+  }
+}
