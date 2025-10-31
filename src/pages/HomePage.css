@@ -8,9 +8,21 @@
   align-items: center;
   justify-content: flex-start;
   padding: 50px 60px 80px 60px;
-  min-height: 751px;
+  min-height: 832px;
   background: #fff;
-  margin-top: 100px;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 832px;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-content-wrapper {
@@ -19,7 +31,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1283px;
   position: relative;
+  z-index: 1;
+  margin-top: 100px;
 }
 
 .hero-left-content {
@@ -61,6 +76,20 @@
   object-fit: cover;
   object-position: 50% 50%;
   pointer-events: none;
+}
+
+/* Video Placeholder Styling */
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #deecb7, #6e9722);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 /* Hero Right Content */
@@ -205,15 +234,16 @@
 }
 
 .banner-section:before {
-  background: #0003;
+  background: rgba(0, 0, 0, 0.3);
   content: "";
   inset: 0;
   pointer-events: none;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 
-.banner-background-video {
+.banner-background-video,
+.banner-video {
   height: 100%;
   inset: 0;
   object-fit: cover;
@@ -230,7 +260,7 @@
   top: 84px;
   transform: translateX(-50%);
   width: 430px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .banner-content h2 {
@@ -271,7 +301,7 @@
   position: absolute;
   top: 212px;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .explore-now span {
@@ -293,7 +323,7 @@
   position: absolute;
   top: 774px;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .pagination-dot {
@@ -472,7 +502,8 @@
 }
 
 .about-image img,
-.about-image video {
+.about-image video,
+.about-video {
   backdrop-filter: blur(62.668px);
   -webkit-backdrop-filter: blur(62.668px);
   height: 100%;
@@ -490,18 +521,27 @@
   box-shadow: 0 5.013px 125.337px 67.682px #afafaf40;
 }
 
-/* Services Section */
+/* Services Section - 4-column grid for HomePage */
 .homepage .services-section {
-  padding: 120px 60px;
+  padding: 60px 30px;
   text-align: center;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 53px;
 }
 
 .homepage .section-title {
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 80px;
-  letter-spacing: -0.72px;
+  margin: 0;
+  letter-spacing: -0.52px;
   text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000;
+  line-height: 1.286;
 }
 
 .homepage .section-title .highlight {
@@ -510,21 +550,23 @@
 
 .homepage .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 228px);
   gap: 32px;
-  max-width: 1000px;
-  margin: 80px auto 0;
+  max-width: 100%;
+  justify-content: center;
 }
 
 .homepage .service-card {
   position: relative;
   height: 216px;
+  width: 228px;
   border-radius: 18px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px 49px;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -537,8 +579,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(54,50,5,0.75) 91%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 60.732%, rgba(54,50,5,0.75) 91.162%);
   backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  border-radius: 18px;
+  z-index: 1;
 }
 
 .homepage .service-image {
@@ -547,30 +592,43 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 18px;
 }
 
 .homepage .service-name {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-family: 'Poppins', sans-serif;
   font-size: 19px;
   font-weight: 500;
   color: white;
+  text-align: center;
+  line-height: 1.286;
+  white-space: nowrap;
+  margin: 0;
 }
 
-.homepage .service-price {
+.homepage .service-price-badge {
   position: absolute;
   top: 0;
   right: 0;
   background: #6e9722;
   color: white;
-  padding: 7px 24px;
-  border-bottom-left-radius: 18px;
-  border-top-right-radius: 18px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 500;
+  padding: 7px 20px;
+  border-bottom-left-radius: 18px;
+  border-top-right-radius: 18px;
   z-index: 2;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.286;
+  white-space: nowrap;
 }
 
 /* Testimonials Section */
@@ -593,10 +651,48 @@
 }
 
 .testimonial-container {
+  display: flex;
+  align-items: center;
+  gap: 82px;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 732px;
+  max-width: 100%;
   padding-bottom: 50px;
   position: relative;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 732px;
+  width: 732px;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  border-radius: 26.354px;
+  cursor: pointer;
+  height: 115px;
+  width: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-button.left {
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.nav-button img {
+  width: 67.083px;
+  height: 67.083px;
 }
 
 .testimonial-quote {
@@ -605,9 +701,17 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 30px;
-  margin-bottom: 32px;
+  margin: 0 0 32px 0;
   text-align: center;
   text-transform: capitalize;
+  max-width: 738px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .testimonial-image {
@@ -620,10 +724,12 @@
 }
 
 .testimonial-image img,
-.testimonial-image video {
+.testimonial-image video,
+.testimonial-video {
   height: 100%;
   object-fit: cover;
   width: 100%;
+  border-radius: 10px;
 }
 
 .testimonial-author {
@@ -670,8 +776,18 @@
   width: 100%;
 }
 
+.achievement-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .achievement-section:before {
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6), rgba(45, 45, 45, 0.6));
   content: "";
   inset: 0;
   position: absolute;
@@ -734,7 +850,13 @@
 
 @media (max-width: 1200px) {
   .homepage .services-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 228px);
+    gap: 28px;
+  }
+
+  .homepage .services-section {
+    padding: 50px 30px;
+    height: auto;
   }
 }
 
@@ -970,17 +1092,22 @@
   }
 
   .homepage .services-section {
-    padding: 80px 30px;
+    padding: 40px 20px;
+    height: auto;
   }
 
   .homepage .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+  }
+
+  .homepage .service-card {
+    width: 200px;
+    height: 190px;
   }
 
   .homepage .section-title {
-    font-size: 28px;
-    margin-bottom: 60px;
+    font-size: 22px;
   }
 
   .testimonials-section {
@@ -1165,29 +1292,31 @@
 
   .homepage .services-section {
     padding: 30px 15px;
+    height: auto;
   }
-  
+
   .homepage .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
+    max-width: 280px;
   }
-  
-  .homepage .section-title {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  
+
   .homepage .service-card {
+    width: 100%;
     height: 200px;
   }
-  
+
+  .homepage .section-title {
+    font-size: 20px;
+  }
+
   .homepage .service-name {
     font-size: 17px;
   }
-  
-  .homepage .service-price {
-    padding: 6px 20px;
-    font-size: 13px;
+
+  .homepage .service-price-badge {
+    font-size: 12px;
+    padding: 5px 16px;
   }
 
   .testimonials-section {

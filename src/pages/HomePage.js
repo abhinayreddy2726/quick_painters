@@ -64,7 +64,13 @@ function HomePage() {
   const Banner = () => {
     return (
         <div className="banner-section">
-          <video autoPlay loop muted playsInline className="banner-background-video">
+          <video
+            className="banner-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
             <source src="/assets/4776828_Couple_Paint_3840x2160.mp4" type="video/mp4" />
           </video>
           <div className="banner-content">
@@ -90,26 +96,26 @@ function HomePage() {
       {
         icon: '/assets/smiley-icon-2.svg',
         iconBg: 'solid',
-        title: 'Customer Satisfaction',
-        description: 'Our team of professional painters delivers top-notch residential and commercial painting services with a smile.'
+        title: 'Quality Service',
+        description: 'Our team of professional painters delivers top-notch residential and commercial painting services.'
       },
       {
         icon: '/assets/sparkle-icon-2.svg',
         iconBg: '/assets/ellipse.svg',
-        title: 'Premium Quality',
-        description: 'We use only the finest materials and techniques to ensure a flawless finish that lasts for years.'
+        title: 'Quality Service',
+        description: 'Our team of professional painters delivers top-notch residential and commercial painting services.'
       },
       {
         icon: '/assets/brain-icon-2.svg',
         iconBg: '/assets/ellipse.svg',
-        title: 'Expert Consultation',
-        description: 'Get professional advice on colors, textures, and finishes to bring your vision to life perfectly.'
+        title: 'Quality Service',
+        description: 'Our team of professional painters delivers top-notch residential and commercial painting services.'
       },
       {
         icon: '/assets/lightning-icon-2.svg',
         iconBg: '/assets/ellipse.svg',
-        title: 'Fast & Efficient',
-        description: 'We complete projects on time without compromising on quality, ensuring minimal disruption to your routine.'
+        title: 'Quality Service',
+        description: 'Our team of professional painters delivers top-notch residential and commercial painting services.'
       }
     ];
 
@@ -159,19 +165,31 @@ function HomePage() {
     return (
       <section className="about-section" id="about">
         <div className="vector-decoration-2">
-          <img src="/assets/vector-decoration.svg" alt="" />
+          <img src="/assets/vector-decoration-2.svg" alt="" />
         </div>
         <h2>About <span className="highlight">Quick Painters</span></h2>
         <p>Quick Painters, a reputable painting service provider in Hyderabad, India, brings your vision to life with expert interior and exterior painting solutions. Since 2020, we have been delivering top-notch services, specializing in lime textures, wallpapers, royal play, wood polish and artist works. Our dedicated team caters to both residential and commercial projects, ensuring impeccable results that exceed expectations.</p>
         <div className="about-images">
           <div className="about-image">
-            <video autoPlay loop muted playsInline>
-              <source src="/assets/1859107_Wall_Painter_3840x2160.mp4" type="video/mp4" />
+            <video 
+              className="about-video" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+            >
+              <source src="/assets/2195016_Painting_Scaffolding_3840x2160.mp4" type="video/mp4" />
             </video>
           </div>
           <div className="about-image">
-            <video autoPlay loop muted playsInline>
-              <source src="/assets/2195016_Painting_Scaffolding_3840x2160.mp4" type="video/mp4" />
+            <video 
+              className="about-video" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+            >
+              <source src="/assets/1859107_Wall_Painter_3840x2160.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -179,7 +197,7 @@ function HomePage() {
     );
   };
 
-  // Services component
+  // Services component - 4-column grid for HomePage
   const Services = () => {
     const services = [
       {
@@ -201,16 +219,6 @@ function HomePage() {
         title: 'Concrete Texture',
         price: '₹7 per sft',
         image: '/assets/service-concrete-texture.png'
-      },
-      {
-        title: 'Textures & Designs',
-        price: '₹7 per sft',
-        image: '/assets/service-textures-designs.png'
-      },
-      {
-        title: 'Stucco Marbel',
-        price: '₹7 per sft',
-        image: '/assets/service-stucco-marbel.png'
       },
       {
         title: 'Textures & Designs',
@@ -251,7 +259,7 @@ function HomePage() {
           {services.map((service, index) => (
             <div key={`service-${index}`} className="service-card">
               <img src={service.image} alt={service.title} className="service-image" />
-              <span className="service-price">{service.price}</span>
+              <div className="service-price-badge">{service.price}</div>
               <p className="service-name">{service.title}</p>
             </div>
           ))}
@@ -266,19 +274,26 @@ function HomePage() {
       <section className="testimonials-section" id="testimonials">
         <h2><span className="highlight">Happy</span> Customers</h2>
         <div className="testimonial-container">
-          <p className="testimonial-quote">"My journey in recruitment has been an incredibly fulfilling one, shaped by dedication, expertise, and an unwavering commitment to excellence. I began my career as a recruiter and have had the privilege of leading recruitment teams at large, renowned companies across diverse industries, including airlines, healthcare</p>
-          <div className="testimonial-image">
-            <video autoPlay loop muted playsInline>
-              <source src="/assets/5290351_Painting_Woman_3840x2160.mp4" type="video/mp4" />
-            </video>
+          <button className="nav-button left">
+            <img src="/assets/caret-right.svg" alt="Previous" />
+          </button>
+          <div className="testimonial-content">
+            <p className="testimonial-quote">"My journey in recruitment has been an incredibly fulfilling one, shaped by dedication, expertise, and an unwavering commitment to excellence. I began my career as a recruiter and have had the privilege of leading recruitment teams at large, renowned companies across diverse industries, including airlines, healthcare</p>
+            <div className="testimonial-image">
+              <video 
+                className="testimonial-video" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+              >
+                <source src="/assets/5290351_Painting_Woman_3840x2160.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
-          <div className="testimonial-author">
-            <h4>Srikar Vishal Darla</h4>
-            <p>Hyderabad</p>
-          </div>
-          <div className="testimonial-rating">
-            <img src="/assets/star-rating.svg" alt="5 Star Rating" />
-          </div>
+          <button className="nav-button right">
+            <img src="/assets/caret-right.svg" alt="Next" />
+          </button>
         </div>
       </section>
     );
@@ -288,6 +303,7 @@ function HomePage() {
   const Achievement = () => {
     return (
       <section className="achievement-section" id="achievement">
+        {/* Video placeholder - add achievement.mp4 to /public/assets/videos/ */}
         <div className="achievement-content">
           <h3>OUR ACHIEVEMENT</h3>
           <div className="achievement-stats">
@@ -312,12 +328,12 @@ function HomePage() {
           <div className="hero-left-content">
             <h1 className="hero-title">"Bringing Colors to Life with <span className="highlight">Quick Painter"</span></h1>
             <div className="hero-image">
-              <img src="/assets/painter-hero.png" alt="Professional Painter" />
+              <img src="/assets/african-american-painter-man-isolated-blue-background-extending-hands-side-inviting-come-copy-10.png" alt="Professional Painter" />
             </div>
           </div>
           <div className="hero-right-content">
             <div className="vector-background">
-              <img src="/assets/Vector.png" alt="Vector Background" />
+              <img src="/assets/vector-decoration.svg" alt="Vector Background" />
             </div>
             <BookingForm />
           </div>

@@ -16,12 +16,25 @@
 /* Hero Section */
 .hero-section {
   background: #ffffff;
-  min-height: calc(100vh - 80px);
+  min-height: 832px;
+  height: 832px;
   position: relative;
   padding: 120px 40px 40px;
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
+  overflow: hidden;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 832px;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-container {
@@ -32,6 +45,8 @@
   gap: 152px;
   max-width: 1283px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Left Column - Text Content */
@@ -145,10 +160,12 @@
 }
 
 .gallery-item img,
-.gallery-item video {
+.gallery-item video,
+.gallery-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12.67px;
 }
 
 /* Gallery Item 1 - Top Left (257.19px x 152.03px) */
@@ -213,7 +230,7 @@
 .carousel-counter {
   position: absolute;
   right: 134px;
-  bottom: 120px;
+  top: 712px;
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
   font-size: 56px;
@@ -223,15 +240,15 @@
   text-align: right;
   white-space: nowrap;
   pointer-events: none;
+  transform: translateX(100%);
 }
 
 /* Navigation Buttons */
 .carousel-nav {
   position: absolute;
   top: 355px;
-  transform: translateY(-50%);
-  width: 67.08px;
-  height: 67.08px;
+  width: 115px;
+  height: 115px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -243,14 +260,16 @@
   padding: 0;
   overflow: visible;
   box-sizing: border-box;
+  border-radius: 26.354px;
 }
 
 .carousel-nav:hover {
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
 .carousel-nav:active {
-  transform: translateY(-50%) scale(0.95);
+  transform: scale(0.95);
 }
 
 .carousel-nav-prev {
@@ -262,12 +281,12 @@
 }
 
 .carousel-nav-next {
-  right: 38px;
+  left: 1125px;
 }
 
 .caret-icon {
-  width: 67.08px;
-  height: 67.08px;
+  width: 67.083px;
+  height: 67.083px;
   display: block;
   flex-shrink: 0;
   position: relative;

@@ -6,6 +6,7 @@ import NavigationBar from '../components/NavigationBar';
 
 function PortfolioPage() {
   const carouselImages = [
+    '/assets/portfolio-carousel-1.png',
     '/assets/service-internal-painting.png',
     '/assets/service-external-painting.png',
     '/assets/service-textures-designs.png',
@@ -16,8 +17,7 @@ function PortfolioPage() {
     '/assets/service-wood-finishes.png',
     '/assets/service-concrete-texture.png',
     '/assets/service-scratch-texture.png',
-    '/assets/internal-painting.png',
-    '/assets/external-painting.png'
+    '/assets/portfolio-carousel-bg.png'
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,6 +37,9 @@ function PortfolioPage() {
 
       {/* Hero Section */}
       <section className="hero-section">
+        <video autoPlay loop muted playsInline className="hero-background-video">
+          <source src="/assets/4776828_Couple_Paint_3840x2160.mp4" type="video/mp4" />
+        </video>
         <div className="hero-container">
           {/* Left Column - Text Content */}
           <div className="hero-content">
@@ -57,30 +60,32 @@ function PortfolioPage() {
             </div>
           </div>
 
-          {/* Right Column - Image Gallery */}
+          {/* Right Column - Video Gallery */}
           <div className="hero-gallery">
             <div className="gallery-container">
               <div className="gallery-grid">
-                {/* Top Left - Large */}
+                {/* Video 1 - Top Left */}
                 <div className="gallery-item gallery-item-1">
-                  <img src="/assets/service-artist-work.png" alt="Artist work" />
+                  <video autoPlay loop muted playsInline className="gallery-video">
+                    <source src="/assets/2470514_Wall_Painter_1920x1080.mp4" type="video/mp4" />
+                  </video>
                 </div>
-                {/* Top Right - Large with shadow */}
+                {/* Video 2 - Bottom Left Small */}
                 <div className="gallery-item gallery-item-2">
-                  <video autoPlay loop muted playsInline>
-                    <source src="/assets/4776828_Couple_Paint_3840x2160.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                {/* Bottom Left - Medium */}
-                <div className="gallery-item gallery-item-3">
-                  <video autoPlay loop muted playsInline>
-                    <source src="/assets/5290351_Painting_Woman_3840x2160.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                {/* Bottom Right - Medium */}
-                <div className="gallery-item gallery-item-4">
-                  <video autoPlay loop muted playsInline>
+                  <video autoPlay loop muted playsInline className="gallery-video">
                     <source src="/assets/1859107_Wall_Painter_3840x2160.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                {/* Video 3 - Center Large with shadow */}
+                <div className="gallery-item gallery-item-3">
+                  <video autoPlay loop muted playsInline className="gallery-video">
+                    <source src="/assets/4811445_Guy_Young_3840x2160.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                {/* Video 4 - Bottom Right */}
+                <div className="gallery-item gallery-item-4">
+                  <video autoPlay loop muted playsInline className="gallery-video">
+                    <source src="/assets/0_Building_Architecture_3840x2160.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>

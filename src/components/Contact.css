@@ -7,13 +7,20 @@
   display: flex;
   gap: 47px;
   align-items: center;
-  padding: 50px 30px;
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 10px;
+  max-width: 1283px;
+  margin: 120px auto 0;
+  min-height: 420px;
+  overflow: hidden;
 }
 
 .contact-component .booking-left {
-  width: 628px;
+  width: 628.193px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  align-items: center;
 }
 
 .contact-component .booking-title {
@@ -21,9 +28,12 @@
   font-weight: 700;
   text-align: center;
   letter-spacing: -0.576px;
-  margin-bottom: 33px;
+  margin: 0;
+  padding-bottom: 33px;
   font-family: 'Nunito Sans', sans-serif;
-  color: #000;
+  color: #101828;
+  line-height: normal;
+  width: 100%;
 }
 
 .contact-component .booking-title .highlight {
@@ -32,41 +42,61 @@
 
 .contact-component .booking-image-container {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4096 / 2732;
+  flex-shrink: 0;
 }
 
 .contact-component .booking-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
 }
 
 .contact-component .booking-form-container {
   position: relative;
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  place-items: start;
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .contact-component .decorative-vector {
-  position: absolute;
-  top: 107px;
-  left: 167px;
-  width: 444px;
-  height: 212px;
+  grid-area: 1 / 1;
+  width: 444.523px;
+  height: 212.234px;
+  margin-left: 167px;
+  margin-top: 107px;
   transform: rotate(30.653deg) scaleY(-1);
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .contact-component .booking-form {
+  grid-area: 1 / 1;
   background: rgba(255, 255, 255, 0.83);
   backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   border: 1px solid #f0f0f0;
   border-radius: 16px;
   padding: 29px 6px;
   width: 378px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 22px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  margin-left: 0;
+  margin-top: 0;
+  box-sizing: border-box;
 }
 
 .contact-component .form-title {
@@ -76,6 +106,10 @@
   font-family: 'Nunito Sans', sans-serif;
   color: #000;
   margin: 0;
+  line-height: 1.286;
+  flex-shrink: 0;
+  white-space: pre;
+  text-align: center;
 }
 
 .contact-component .form-subtitle {
@@ -85,6 +119,13 @@
   text-align: center;
   font-family: 'Nunito Sans', sans-serif;
   margin: 0;
+  line-height: 22px;
+  width: 356px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  white-space-collapse: collapse;
+  flex-shrink: 0;
 }
 
 .contact-component .form-input {
@@ -99,6 +140,11 @@
   font-family: 'Nunito Sans', sans-serif;
   color: #101828;
   transition: border-color 0.3s;
+  line-height: 20px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .contact-component .form-input:focus {
@@ -108,6 +154,7 @@
 
 .contact-component .form-input::placeholder {
   color: rgba(16, 24, 40, 0.37);
+  line-height: 20px;
 }
 
 .contact-component .form-input.error {
@@ -135,6 +182,15 @@
   cursor: pointer;
   transition: background 0.3s;
   font-family: 'Nunito Sans', sans-serif;
+  padding: 5px 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: normal;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  white-space: pre;
 }
 
 .contact-component .form-submit:hover {
@@ -150,14 +206,15 @@
   .contact-component .booking-section {
     flex-direction: column;
     gap: 50px;
-    padding: 50px 20px;
+    padding: 10px 20px;
+    margin-top: 100px;
   }
-  
+
   .contact-component .booking-left {
     width: 100%;
-    max-width: 628px;
+    max-width: 628.193px;
   }
-  
+
   .contact-component .booking-form {
     width: 100%;
     max-width: 378px;
@@ -166,36 +223,68 @@
 
 @media (max-width: 768px) {
   .contact-component .booking-section {
-    padding: 40px 20px;
+    padding: 10px 20px;
+    margin-top: 100px;
   }
-  
+
+  .contact-component .booking-left {
+    gap: 30px;
+  }
+
   .contact-component .booking-title {
     font-size: 20px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
   }
-  
+
   .contact-component .decorative-vector {
     display: none;
   }
-  
+
   .contact-component .booking-form {
     width: 100%;
     max-width: 350px;
+    height: auto;
   }
-  
+
   .contact-component .form-input,
   .contact-component .form-submit {
     width: 100%;
     max-width: 300px;
   }
+
+  .contact-component .form-subtitle {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 480px) {
+  .contact-component .booking-section {
+    padding: 10px 15px;
+    margin-top: 100px;
+  }
+
   .contact-component .booking-title {
     font-size: 18px;
+    padding-bottom: 20px;
   }
-  
+
   .contact-component .form-title {
     font-size: 16px;
+  }
+
+  .contact-component .booking-form {
+    padding: 20px 6px;
+    max-width: 100%;
+  }
+
+  .contact-component .form-input,
+  .contact-component .form-submit {
+    max-width: 280px;
+  }
+
+  .contact-component .form-subtitle {
+    max-width: 280px;
+    font-size: 11px;
   }
 }

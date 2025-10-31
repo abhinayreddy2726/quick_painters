@@ -4,8 +4,7 @@ import './Contact.css';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
-    email: ''
+    phone: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -13,23 +12,17 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
     } else if (!/^[+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ''))) {
       newErrors.phone = 'Please enter a valid phone number';
     }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-    
+
     return newErrors;
   };
 
@@ -64,7 +57,7 @@ const Contact = () => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       alert('Thank you! We will contact you soon.');
-      setFormData({ name: '', phone: '', email: '' });
+      setFormData({ name: '', phone: '' });
       setErrors({});
     } catch (error) {
       alert('Something went wrong. Please try again.');
@@ -81,7 +74,7 @@ const Contact = () => {
             "Bringing Colors to Life with <span className="highlight">Quick Painter"</span>
           </h2>
           <div className="booking-image-container">
-            <img src="/assets/painter-hero.png" className="booking-image" alt="Painter" />
+            <img src="/assets/african-american-painter-man-isolated-blue-background-extending-hands-side-inviting-come-copy-10.png" className="booking-image" alt="Painter" />
           </div>
         </div>
         
@@ -89,35 +82,35 @@ const Contact = () => {
           <img src="/assets/vector-decoration.svg" alt="Decorative" className="decorative-vector" />
           <form className="booking-form" onSubmit={handleSubmit}>
             <h3 className="form-title">Book Home Inspection</h3>
-            <p className="form-subtitle">Get a thorough home inspection from our experts</p>
-            <input 
-              type="text" 
+            <p className="form-subtitle">Get a through home inspection from our experts</p>
+            <input
+              type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               className={`form-input ${errors.name ? 'error' : ''}`}
-              placeholder="Name" 
-              required 
+              placeholder="Name"
+              required
             />
             {errors.name && <span className="error-message">{errors.name}</span>}
-            <input 
-              type="tel" 
+            <input
+              type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
               className={`form-input ${errors.phone ? 'error' : ''}`}
-              placeholder="Phone Number" 
-              required 
+              placeholder="Phone Number"
+              required
             />
             {errors.phone && <span className="error-message">{errors.phone}</span>}
-            <input 
-              type="text" 
+            <input
+              type="text"
               className="form-input"
               value="Hyderabad"
               readOnly
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="form-submit"
               disabled={isSubmitting}
             >
