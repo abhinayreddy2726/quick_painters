@@ -178,8 +178,9 @@
 
 .form-input {
   width: 330px;
-  height: 48px;
-  padding: 0 20px;
+  min-height: 48px;
+  height: auto;
+  padding: 12px 20px;
   border: 1px solid #d0d5dd;
   border-radius: 10px;
   font-size: 14px;
@@ -189,6 +190,12 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6e9722;
 }
 
 .form-input::placeholder {
@@ -202,8 +209,9 @@
 
 .form-button {
   width: 330px;
-  height: 49px;
-  padding: 5px 108px;
+  min-height: 49px;
+  height: auto;
+  padding: 12px 20px;
   background: #6e9722;
   color: white;
   border: none;
@@ -222,6 +230,10 @@
 
 .form-button:hover {
   background: #5a7a1c;
+}
+
+.form-button:active {
+  transform: scale(0.98);
 }
 
 /* Banner Section */
@@ -297,6 +309,8 @@
   cursor: pointer;
   display: flex;
   gap: 8px;
+  padding: 10px;
+  min-height: 44px;
   left: 50%;
   position: absolute;
   top: 212px;
@@ -673,21 +687,36 @@
   border: none;
   border-radius: 26.354px;
   cursor: pointer;
+  min-height: 115px;
+  min-width: 115px;
   height: 115px;
   width: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 
 .nav-button:hover {
   background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
 }
 
 .nav-button.left {
   transform: rotate(180deg) scaleY(-1);
+}
+
+.nav-button.left:hover {
+  transform: rotate(180deg) scaleY(-1) scale(1.05);
+}
+
+.nav-button.left:active {
+  transform: rotate(180deg) scaleY(-1) scale(0.95);
 }
 
 .nav-button img {

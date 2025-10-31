@@ -83,6 +83,8 @@
 
 .footer-links-column ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-links-column li {
@@ -97,6 +99,8 @@
     line-height: 20px;
     text-decoration: none;
     transition: color 0.3s;
+    display: inline-block;
+    padding: 5px 0;
 }
 
 .footer-links-column a:hover {
@@ -144,6 +148,12 @@
     color: #344054;
     cursor: pointer;
     white-space: nowrap;
+    padding: 8px 12px;
+    transition: opacity 0.3s;
+}
+
+.footer-subscribe-btn:hover {
+    opacity: 0.8;
 }
 
 .footer-arrow-icon {
@@ -279,6 +289,13 @@
         margin-bottom: 40px;
     }
 
+    .footer-links-column a {
+        padding: 10px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
     .footer-subscribe-wrapper {
         position: relative;
         left: 0;
@@ -290,6 +307,14 @@
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+        min-height: 48px;
+    }
+
+    .footer-subscribe-btn {
+        padding: 12px 16px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 
     .footer-social {
@@ -298,6 +323,14 @@
         top: 0;
         justify-content: center;
         margin-bottom: 40px;
+    }
+
+    .footer-social a {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .footer-top {
@@ -320,6 +353,13 @@
         justify-content: center;
         width: 100%;
         gap: 40px;
+    }
+
+    .footer-legal a {
+        padding: 10px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -348,8 +388,9 @@
 
     .footer-subscribe {
         width: 100%;
-        height: 44px;
-        padding: 0 10px;
+        min-height: 48px;
+        height: auto;
+        padding: 8px 10px;
     }
 
     .footer-subscribe input {
@@ -358,6 +399,8 @@
 
     .footer-subscribe-btn {
         font-size: 13px;
+        padding: 12px 14px;
+        min-height: 44px;
     }
 
     .footer-arrow-icon {
@@ -367,8 +410,8 @@
     }
 
     .footer-social a {
-        width: 32px;
-        height: 32px;
+        width: 44px;
+        height: 44px;
     }
 
     .footer-copyright {
@@ -376,11 +419,14 @@
     }
 
     .footer-legal {
-        gap: 30px;
+        gap: 20px;
+        flex-direction: column;
     }
 
     .footer-legal a {
         font-size: 13px;
+        min-height: 44px;
+        padding: 10px;
     }
 }
 

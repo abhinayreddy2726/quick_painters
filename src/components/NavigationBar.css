@@ -69,6 +69,55 @@
   display: none;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+  position: relative;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background: #000000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  cursor: pointer;
+}
+
 @media (max-width: 1400px) {
   .nav-container {
     gap: 250px;
@@ -109,8 +158,8 @@
   }
 
   .nav-container {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 0;
     padding: 0 20px;
   }
 
@@ -119,20 +168,48 @@
     height: 43px;
   }
 
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* Hide nav links by default on mobile */
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
     gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 100px 30px 30px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  /* Show nav links when mobile menu is open */
+  .nav-links.mobile-open {
+    right: 0;
+  }
+
+  /* Show overlay when mobile menu is open */
+  .mobile-menu-overlay {
+    display: block;
   }
 
   .nav-link {
-    font-size: 14px;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 0;
   }
 }
 
 @media (max-width: 480px) {
   .nav-container {
-    gap: 15px;
     padding: 0 15px;
   }
 
@@ -142,11 +219,14 @@
   }
 
   .nav-links {
-    gap: 20px;
+    width: 80%;
+    max-width: 280px;
+    gap: 25px;
+    padding: 80px 20px 30px;
   }
 
   .nav-link {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 

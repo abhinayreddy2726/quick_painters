@@ -130,11 +130,12 @@
 
 .contact-component .form-input {
   width: 330px;
-  height: 48px;
+  min-height: 48px;
+  height: auto;
   background: #ffffff;
   border: 1px solid #d0d5dd;
   border-radius: 10px;
-  padding: 0 20px;
+  padding: 12px 20px;
   font-size: 14px;
   font-weight: 600;
   font-family: 'Nunito Sans', sans-serif;
@@ -150,6 +151,7 @@
 .contact-component .form-input:focus {
   border-color: #6e9722;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(110, 151, 34, 0.1);
 }
 
 .contact-component .form-input::placeholder {
@@ -172,7 +174,8 @@
 
 .contact-component .form-submit {
   width: 330px;
-  height: 49px;
+  min-height: 49px;
+  height: auto;
   background: #6e9722;
   color: white;
   border: none;
@@ -180,9 +183,9 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
   font-family: 'Nunito Sans', sans-serif;
-  padding: 5px 108px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,11 +198,20 @@
 
 .contact-component .form-submit:hover {
   background: #5a7a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(110, 151, 34, 0.3);
+}
+
+.contact-component .form-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(110, 151, 34, 0.3);
 }
 
 .contact-component .form-submit:disabled {
   background: #9ca3af;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 @media (max-width: 1280px) {
@@ -250,6 +262,12 @@
   .contact-component .form-submit {
     width: 100%;
     max-width: 300px;
+    min-height: 48px;
+    padding: 14px 20px;
+  }
+
+  .contact-component .form-submit {
+    min-height: 50px;
   }
 
   .contact-component .form-subtitle {
@@ -281,6 +299,9 @@
   .contact-component .form-input,
   .contact-component .form-submit {
     max-width: 280px;
+    min-height: 50px;
+    padding: 15px 18px;
+    font-size: 14px;
   }
 
   .contact-component .form-subtitle {

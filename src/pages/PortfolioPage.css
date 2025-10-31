@@ -101,28 +101,37 @@
 
 .book-home-visit-btn {
   width: 182px;
-  height: 49px;
+  min-height: 49px;
+  height: auto;
+  padding: 14px 20px;
   background: #6e9722;
   border-radius: 15px;
   border: none;
   cursor: pointer;
-  
+
   font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
   color: #ffffff;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .book-home-visit-btn:hover {
   background: #5a7a1a;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(110, 151, 34, 0.3);
+}
+
+.book-home-visit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(110, 151, 34, 0.3);
 }
 
 /* Right Column - Image Gallery */
@@ -247,6 +256,8 @@
 .carousel-nav {
   position: absolute;
   top: 355px;
+  min-width: 115px;
+  min-height: 115px;
   width: 115px;
   height: 115px;
   border: none;
@@ -429,6 +440,8 @@
   }
 
   .carousel-nav {
+    min-width: 67.08px;
+    min-height: 67.08px;
     width: 67.08px;
     height: 67.08px;
     top: 222px;
@@ -459,7 +472,9 @@
 
   .book-home-visit-btn {
     width: 160px;
-    height: 45px;
+    min-height: 50px;
+    height: auto;
+    padding: 16px 18px;
     font-size: 13px;
   }
 
@@ -502,6 +517,8 @@
   }
 
   .carousel-nav {
+    min-width: 67.08px;
+    min-height: 67.08px;
     width: 67.08px;
     height: 67.08px;
     top: 178px;
@@ -510,5 +527,9 @@
   .caret-icon {
     width: 67.08px;
     height: 67.08px;
+  }
+
+  .hero-section {
+    padding-top: 120px;
   }
 }
