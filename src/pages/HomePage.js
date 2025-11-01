@@ -79,7 +79,7 @@ function HomePage() {
           </div>
           <div className="explore-now">
             <span>Explore Now</span>
-            <img src="/assets/arrow-right.svg" alt="Arrow Right" />
+            <img src="/assets/CaretRight.svg" alt="Arrow Right" />
           </div>
           <div className="banner-pagination">
             <div className="pagination-dot active"></div>
@@ -197,7 +197,7 @@ function HomePage() {
     );
   };
 
-  // Services component - 4-column grid for HomePage
+  // Services component - 4-column grid for HomePage (12 cards total)
   const Services = () => {
     const services = [
       {
@@ -231,6 +231,16 @@ function HomePage() {
         image: '/assets/service-stucco-marbel.png'
       },
       {
+        title: 'Textures & Designs',
+        price: '₹7 per sft',
+        image: '/assets/service-textures-designs.png'
+      },
+      {
+        title: 'Stucco Marbel',
+        price: '₹7 per sft',
+        image: '/assets/service-stucco-marbel.png'
+      },
+      {
         title: 'Wall Paper',
         price: '₹7 per sft',
         image: '/assets/service-wall-paper.png'
@@ -252,17 +262,41 @@ function HomePage() {
       }
     ];
 
+    // Group services into rows of 4
+    const rows = [];
+    for (let i = 0; i < services.length; i += 4) {
+      rows.push(services.slice(i, i + 4));
+    }
+
     return (
       <section className="services-section" id="services">
         <h2 className="section-title">Book Your <span className="highlight">Service</span></h2>
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={`service-${index}`} className="service-card">
-              <img src={service.image} alt={service.title} className="service-image" />
-              <div className="service-price-badge">{service.price}</div>
-              <p className="service-name">{service.title}</p>
+          {rows.map((row, rowIndex) => (
+            <div key={`row-${rowIndex}`} className="services-row">
+              {row.map((service, index) => (
+                <div key={`service-${rowIndex}-${index}`} className="service-card">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="service-image"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${service.image}`);
+                      e.target.style.backgroundColor = '#deecb7';
+                    }}
+                  />
+                  <div className="service-price-badge">{service.price}</div>
+                  <p className="service-name">{service.title}</p>
+                </div>
+              ))}
             </div>
           ))}
+        </div>
+        <div className="view-all-container">
+          <a href="#services" className="view-all-link">
+            View all <img src="/assets/CaretRight.svg" alt="Arrow" className="view-all-arrow" />
+          </a>
         </div>
       </section>
     );
@@ -275,25 +309,40 @@ function HomePage() {
         <h2><span className="highlight">Happy</span> Customers</h2>
         <div className="testimonial-container">
           <button className="nav-button left">
-            <img src="/assets/caret-right.svg" alt="Previous" />
+            <img src="/assets/CaretRight.svg" alt="Previous" className="caret-icon" />
           </button>
           <div className="testimonial-content">
-            <p className="testimonial-quote">"My journey in recruitment has been an incredibly fulfilling one, shaped by dedication, expertise, and an unwavering commitment to excellence. I began my career as a recruiter and have had the privilege of leading recruitment teams at large, renowned companies across diverse industries, including airlines, healthcare</p>
+            <div className="testimonial-quote-icon">
+              <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 17.92V32H14.08V17.92H7.04V10.88C7.04 7.68 9.6 5.12 12.8 5.12H14.08V0H12.8C6.4 0 0 6.4 0 12.8V17.92ZM25.92 17.92V32H40V17.92H32.96V10.88C32.96 7.68 35.52 5.12 38.72 5.12H40V0H38.72C32.32 0 25.92 6.4 25.92 12.8V17.92Z" fill="#8FB31D"/>
+              </svg>
+            </div>
+            <p className="testimonial-quote">"My Journey In Recruitment Has Been An Incredibly Fulfilling One, Shaped By Dedication, Expertise, And An Unwavering Commitment To Excellence. I Began My Career As A Recruiter And Have Had The Privilege Of Leading Recruitment Teams At Large, Renowned Companies Across Diverse Industries, Including Airlines, Healthcare</p>
             <div className="testimonial-image">
-              <video 
-                className="testimonial-video" 
-                autoPlay 
-                muted 
-                loop 
+              <video
+                className="testimonial-video"
+                autoPlay
+                muted
+                loop
                 playsInline
               >
                 <source src="/assets/5290351_Painting_Woman_3840x2160.mp4" type="video/mp4" />
               </video>
             </div>
+            <div className="testimonial-author">
+              <h4>Srikar Vishal Darla</h4>
+              <p>Hyderabad</p>
+            </div>
           </div>
           <button className="nav-button right">
-            <img src="/assets/caret-right.svg" alt="Next" />
+            <img src="/assets/CaretRight.svg" alt="Next" className="caret-icon" />
           </button>
+        </div>
+        <div className="testimonial-pagination">
+          <div className="pagination-dot"></div>
+          <div className="pagination-dot"></div>
+          <div className="pagination-dot"></div>
+          <div className="pagination-dot active"></div>
         </div>
       </section>
     );
@@ -303,7 +352,15 @@ function HomePage() {
   const Achievement = () => {
     return (
       <section className="achievement-section" id="achievement">
-        {/* Video placeholder - add achievement.mp4 to /public/assets/videos/ */}
+        <video
+          className="achievement-background-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/assets/4811445_Guy_Young_3840x2160.mp4" type="video/mp4" />
+        </video>
         <div className="achievement-content">
           <h3>OUR ACHIEVEMENT</h3>
           <div className="achievement-stats">

@@ -109,10 +109,10 @@ function PortfolioPage() {
 
           {/* Navigation Buttons */}
           <button className="carousel-nav carousel-nav-prev" onClick={previousSlide}>
-            <img src="/assets/caret-right.svg" alt="Previous" className="caret-icon" />
+            <img src="/assets/CaretRight.svg" alt="Previous" className="caret-icon" />
           </button>
           <button className="carousel-nav carousel-nav-next" onClick={nextSlide}>
-            <img src="/assets/caret-right.svg" alt="Next" className="caret-icon" />
+            <img src="/assets/CaretRight.svg" alt="Next" className="caret-icon" />
           </button>
         </div>
       </section>

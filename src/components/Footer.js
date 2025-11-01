@@ -41,13 +41,13 @@ const Footer = () => {
 
       <div className="footer-subscribe-wrapper">
         <div className="footer-subscribe">
-          <input 
-            type="email" 
+          <input
+            type="email"
             placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <img src="/assets/arrow-icon.svg" alt="" className="footer-arrow-icon" />
+          <img src="/assets/CaretRight.svg" alt="" className="footer-arrow-icon" />
           <span className="footer-subscribe-btn" onClick={handleSubscribe}>Subscribe</span>
         </div>
       </div>

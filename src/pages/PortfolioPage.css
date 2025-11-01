@@ -287,8 +287,8 @@
   left: 38px;
 }
 
-.carousel-nav-prev .caret-icon {
-  transform: rotate(180deg) scaleY(-1);
+.carousel-nav-next .caret-icon {
+  transform: scaleX(-1);
 }
 
 .carousel-nav-next {
